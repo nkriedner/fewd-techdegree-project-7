@@ -17,11 +17,12 @@ body {
     grid-template-areas:
         "header header header header"
         "sidebar sidebar sidebar sidebar"
-        "dashboard dashboard dashboard dashboard";
+        "dashboard dashboard dashboard dashboard"
+        "alert alert alert alert";
 }
 
 header {
-    height: 10rem;
+    height: 9rem;
     display: flex;
     align-items: center;
     background-color: #7979de;
@@ -118,12 +119,23 @@ header .student-name {
     background-color: rgb(255, 250, 250);
 }
 
+.alert-message {
+    grid-area: alert;
+    display: flex;
+    justify-content: space-between;
+    background-color: #7979de;
+    padding: 1.4rem 2rem;
+    color: white;
+    margin: 1.2rem;
+    border-radius: 5px;
+}
+
 @media screen and (min-width: 768px) {
     .grid-wrapper {
         grid-template-areas:
             "header header header header"
             "sidebar dashboard dashboard dashboard"
-            "sidebar . . ."
+            "sidebar alert alert alert"
             "sidebar . . ."
             "sidebar . . .";
         grid-template-columns: 10rem 1fr 1fr 1fr;
