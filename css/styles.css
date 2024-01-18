@@ -12,13 +12,21 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.grid-wrapper {
+    display: grid;
+    grid-template-areas:
+        "header header header header"
+        "sidebar sidebar sidebar sidebar";
+}
+
 header {
-    height: 20vh;
+    height: 10rem;
     display: flex;
     align-items: center;
     background-color: #7979de;
     color: white;
     padding: 3rem 1.5rem;
+    grid-area: header;
 }
 
 header h1 {
@@ -66,4 +74,37 @@ header .profile-img {
 
 header .student-name {
     font-size: 1.2rem;
+}
+
+.sidebar-nav {
+    grid-area: sidebar;
+    max-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 2.7rem;
+    padding: 1.5rem 1rem;
+    background-color: #494984;
+}
+
+.sidebar-nav svg {
+    height: 3.8rem;
+    fill: white;
+}
+
+@media screen and (min-width: 768px) {
+    .grid-wrapper {
+        grid-template-areas:
+            "header header header header"
+            "sidebar . . ."
+            "sidebar . . ."
+            "sidebar . . ."
+            "sidebar . . .";
+    }
+    .sidebar-nav {
+        background-color: tomato;
+        flex-direction: column;
+        max-height: 100%;
+        width: 10rem;
+    }
 }
