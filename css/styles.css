@@ -49,6 +49,10 @@ header h1 sup {
     padding-right: 1rem;
     position: relative;
 }
+.bell-icon svg:hover {
+    cursor: pointer;
+    animation: zoomIn 0.5s forwards;
+}
 .bell-icon::after {
     content: "";
     display: block;
@@ -62,14 +66,40 @@ header h1 sup {
     z-index: 10000;
     position: absolute;
 }
-.bell-icon:hover {
-    cursor: pointer;
-    animation: zoomIn 0.5s forwards;
-}
 .student-identity {
     border-left: 1px solid lightgray;
     display: flex;
     align-items: center;
+}
+.notifications {
+    position: absolute;
+    background-color: white;
+    color: #605454;
+    top: 50px;
+    left: -7px;
+    width: 20rem;
+}
+.notifications .note {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    align-items: center;
+    border: 0.5px solid lightgray;
+    border-top-width: 1px;
+}
+.notifications .note:first-child {
+    border-top-width: 0.5px;
+}
+.notifications .note .green-ball {
+    height: 10px;
+    width: 10px;
+    background-color: #78c604;
+    border-radius: 100%;
+    margin-right: 7px;
+}
+.notifications .note .close-x {
+    margin-left: auto;
+    cursor: pointer;
 }
 .profile-img {
     height: 5rem;
@@ -176,6 +206,9 @@ main {
 
 /* MEDIA QUERIES */
 @media screen and (min-width: 768px) {
+    .notifications {
+        left: -13rem;
+    }
     .traffic-header {
         display: flex;
         justify-content: space-between;
