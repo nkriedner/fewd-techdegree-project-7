@@ -62,6 +62,10 @@ header h1 sup {
     z-index: 10000;
     position: absolute;
 }
+.bell-icon:hover {
+    cursor: pointer;
+    animation: zoomIn 0.5s forwards;
+}
 .student-identity {
     border-left: 1px solid lightgray;
     display: flex;
@@ -154,6 +158,20 @@ main {
     padding: 1rem 2rem;
     border-radius: 20px;
     color: white;
+}
+
+/* KEYFRAMES */
+@keyframes zoomIn {
+    0% {
+        transform: scale(0.95);
+    }
+    30% {
+        fill: yellow;
+    }
+    100% {
+        transform: scale(1.05);
+        fill: yellowgreen;
+    }
 }
 
 /* MEDIA QUERIES */
