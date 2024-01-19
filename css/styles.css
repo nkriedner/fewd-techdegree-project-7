@@ -135,6 +135,10 @@ header .student-name {
     border-radius: 5px;
 }
 
+.close-x {
+    cursor: pointer;
+}
+
 .traffic {
     grid-area: traffic;
     /* border: 1px solid red; */
