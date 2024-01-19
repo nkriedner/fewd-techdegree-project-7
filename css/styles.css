@@ -53,7 +53,7 @@ header h1 sup {
     cursor: pointer;
     animation: zoomIn 0.5s forwards;
 }
-.bell-icon::after {
+.bell-icon.green-alert::after {
     content: "";
     display: block;
     width: 7.5px;
@@ -72,6 +72,7 @@ header h1 sup {
     align-items: center;
 }
 .notifications {
+    display: none;
     position: absolute;
     background-color: white;
     color: #605454;
