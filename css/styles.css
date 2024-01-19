@@ -12,13 +12,18 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+ul {
+    list-style: none;
+}
+
 .grid-wrapper {
     display: grid;
     grid-template-areas:
         "header header header header"
         "sidebar sidebar sidebar sidebar"
         "dashboard dashboard dashboard dashboard"
-        "alert alert alert alert";
+        "alert alert alert alert"
+        "traffic traffic traffic traffic";
 }
 
 header {
@@ -130,13 +135,53 @@ header .student-name {
     border-radius: 5px;
 }
 
+.traffic {
+    grid-area: traffic;
+    /* border: 1px solid red; */
+}
+
+.traffic-header h2 {
+    margin: 2rem 0 0.75rem 2rem;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+.traffic-header ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 2.5rem;
+    padding: 0 1rem;
+    margin-right: 2rem;
+}
+
+.traffic ul li {
+    /* padding-left: 1rem; */
+    font-size: 1.5rem;
+}
+
+.traffic ul li.selected {
+    background-color: yellowgreen;
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    color: white;
+}
+
 @media screen and (min-width: 768px) {
+    .traffic {
+        grid-area: traffic;
+    }
+    .traffic-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
     .grid-wrapper {
         grid-template-areas:
             "header header header header"
             "sidebar dashboard dashboard dashboard"
             "sidebar alert alert alert"
-            "sidebar . . ."
+            "sidebar traffic traffic traffic"
             "sidebar . . .";
         grid-template-columns: 10rem 1fr 1fr 1fr;
     }
