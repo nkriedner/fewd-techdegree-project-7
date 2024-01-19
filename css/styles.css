@@ -1,31 +1,31 @@
+/* BASIC CSS RESET */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-
 html {
     font-size: 57.5%;
 }
 
+/* GENERAL STYLES */
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
-
 ul {
     list-style: none;
 }
 
+/* GRID LAYOUT */
 .grid-wrapper {
     display: grid;
     grid-template-areas:
-        "header header header header"
-        "sidebar sidebar sidebar sidebar"
-        "dashboard dashboard dashboard dashboard"
-        "alert alert alert alert"
-        "traffic traffic traffic traffic";
+        "header header"
+        "sidebar sidebar"
+        "main main";
 }
 
+/* HEADER STYLES */
 header {
     height: 9rem;
     display: flex;
@@ -35,25 +35,21 @@ header {
     padding: 3rem 1.5rem;
     grid-area: header;
 }
-
 header h1 {
     margin-right: auto;
     font-weight: normal;
     font-size: 2.1rem;
 }
-
 header h1 sup {
     font-size: 1rem;
 }
-
-header .bell-icon {
+.bell-icon {
     fill: white;
     height: 2.8rem;
     padding-right: 1rem;
     position: relative;
 }
-
-header .bell-icon::after {
+.bell-icon::after {
     content: "";
     display: block;
     width: 7.5px;
@@ -66,23 +62,21 @@ header .bell-icon::after {
     z-index: 10000;
     position: absolute;
 }
-
-header .student-identity {
+.student-identity {
     border-left: 1px solid lightgray;
     display: flex;
     align-items: center;
 }
-
-header .profile-img {
+.profile-img {
     height: 5rem;
     border-radius: 50%;
     margin: 0 1rem;
 }
-
-header .student-name {
+.student-name {
     font-size: 1.2rem;
 }
 
+/* SIDEBAR NAVIGATION STYLES */
 .sidebar-nav {
     grid-area: sidebar;
     max-height: 100px;
@@ -93,26 +87,26 @@ header .student-name {
     padding: 1.5rem 1rem;
     background-color: #494984;
 }
-
 .sidebar-nav svg {
     height: 3.8rem;
     fill: white;
 }
 
+/* MAIN STYLES */
+main {
+    grid-area: main;
+}
 .dashboard {
-    grid-area: dashboard;
     display: flex;
     justify-content: space-between;
     height: 5.8rem;
 }
-
 .dashboard h2 {
     align-self: center;
     padding: 0 1.6rem;
     color: #494984;
     font-size: 1.7rem;
 }
-
 .dashboard input {
     width: 65vw;
     width: 100%;
@@ -123,9 +117,7 @@ header .student-name {
     border-color: rgb(170, 165, 165);
     background-color: rgb(255, 250, 250);
 }
-
 .alert-message {
-    grid-area: alert;
     display: flex;
     justify-content: space-between;
     background-color: #7979de;
@@ -134,22 +126,17 @@ header .student-name {
     margin: 1.2rem;
     border-radius: 5px;
 }
-
 .close-x {
     cursor: pointer;
 }
-
 .traffic {
-    grid-area: traffic;
-    /* border: 1px solid red; */
+    margin-top: 1.2rem;
 }
-
 .traffic-header h2 {
     margin: 2rem 0 0.75rem 2rem;
     text-transform: uppercase;
     font-weight: normal;
 }
-
 .traffic-header ul {
     display: flex;
     justify-content: center;
@@ -158,9 +145,7 @@ header .student-name {
     padding: 0 1rem;
     margin-right: 2rem;
 }
-
 .traffic ul li {
-    /* padding-left: 1rem; */
     font-size: 1.5rem;
 }
 
@@ -171,10 +156,8 @@ header .student-name {
     color: white;
 }
 
+/* MEDIA QUERIES */
 @media screen and (min-width: 768px) {
-    .traffic {
-        grid-area: traffic;
-    }
     .traffic-header {
         display: flex;
         justify-content: space-between;
@@ -182,12 +165,12 @@ header .student-name {
     }
     .grid-wrapper {
         grid-template-areas:
-            "header header header header"
-            "sidebar dashboard dashboard dashboard"
-            "sidebar alert alert alert"
-            "sidebar traffic traffic traffic"
-            "sidebar . . .";
-        grid-template-columns: 10rem 1fr 1fr 1fr;
+            "header header"
+            "sidebar main"
+            "sidebar main"
+            "sidebar main"
+            "sidebar main";
+        grid-template-columns: 10rem 1fr;
     }
     .sidebar-nav {
         flex-direction: column;
