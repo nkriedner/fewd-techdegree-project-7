@@ -20,9 +20,9 @@ ul {
 .grid-wrapper {
     display: grid;
     grid-template-areas:
-        "header header"
-        "sidebar sidebar"
-        "main main";
+        "header"
+        "sidebar"
+        "main";
 }
 main {
     grid-area: main;
@@ -45,6 +45,9 @@ main {
 /* HELPER CLASSES */
 .close-x:hover {
     cursor: pointer;
+}
+.profile-image {
+    border-radius: 100%;
 }
 
 /* HEADER STYLES */
@@ -95,6 +98,13 @@ header h1 sup {
     display: flex;
     align-items: center;
 }
+.student-identity .profile-image {
+    height: 5rem;
+    margin: 0 1rem;
+}
+.student-name {
+    font-size: 1.2rem;
+}
 .notifications {
     display: none;
     position: absolute;
@@ -131,14 +141,6 @@ header h1 sup {
     background-color: #b42828;
     color: white;
     border-radius: 3px;
-}
-.profile-img {
-    height: 5rem;
-    border-radius: 50%;
-    margin: 0 1rem;
-}
-.student-name {
-    font-size: 1.2rem;
 }
 
 /* SIDEBAR NAVIGATION STYLES */
@@ -254,6 +256,15 @@ header h1 sup {
     grid-area: new-members;
     min-height: 10rem;
 }
+.member-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.member-container a {
+    color: blue;
+}
 .recent-activity {
     grid-area: recent-activity;
     min-height: 10rem;
@@ -283,14 +294,6 @@ header h1 sup {
 
 /* MEDIA QUERIES */
 @media screen and (min-width: 768px) {
-    .notifications {
-        left: -13rem;
-    }
-    .traffic-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
     .grid-wrapper {
         grid-template-areas:
             "header header"
@@ -312,13 +315,22 @@ header h1 sup {
             "message-user message-user"
             "settings settings";
     }
+    .notifications {
+        left: -13rem;
+    }
     .sidebar-nav {
         flex-direction: column;
+        justify-content: flex-start;
         max-height: 100%;
         width: 10rem;
     }
     .dashboard {
         width: 100%;
+    }
+    .traffic-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
     .social-stats-container {
         display: grid;
