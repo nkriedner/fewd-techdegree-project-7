@@ -4,6 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>WebApp Dashboard | FEWD Techdegree Project 7</title>
+        <link rel="stylesheet" href="css/toggle-switch.css" />
         <link rel="stylesheet" href="css/styles.css" />
         <script
             src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"
@@ -98,7 +99,7 @@
                     <h3><strong>Alert:</strong> You have unread messages</h3>
                     <span class="close-x">X</span>
                 </div>
-                <section id="traffic" class="traffic">
+                <section id="traffic" class="traffic border-bottom">
                     <div class="traffic-header">
                         <h3>Traffic</h3>
                         <nav>
@@ -114,7 +115,7 @@
                         <canvas class="traffic-chart" style="background-color: yellow; width: 100%">CANVAS</canvas>
                     </div>
                 </section>
-                <section class="daily-traffic">
+                <section class="daily-traffic border-bottom">
                     <h3>Daily Traffic</h3>
                     <div class="chart-container">
                         <canvas class="daily-traffic-chart" style="background-color: yellowgreen; width: 100%"
@@ -122,7 +123,7 @@
                         >
                     </div>
                 </section>
-                <section class="mobile-users">
+                <section class="mobile-users border-bottom">
                     <h3>Mobile Users</h3>
                     <div class="chart-container">
                         <canvas class="mobile-users-chart" style="background-color: rgb(109, 246, 223); width: 100%"
@@ -130,7 +131,7 @@
                         >
                     </div>
                 </section>
-                <section class="social-stats">
+                <section class="social-stats border-bottom">
                     <h3>Social Stats</h3>
                     <div class="social-stats-container">
                         <div class="social-stats-content">
@@ -174,7 +175,7 @@
                         </div>
                     </div>
                 </section>
-                <section id="members" class="new-members">
+                <section id="members" class="new-members border-bottom">
                     <h3>New Members</h3>
                     <div class="member-container">
                         <img class="profile-image" src="images/member-1.jpg" alt="Victoria Chambers" />
@@ -209,7 +210,7 @@
                         <p>10/15/20</p>
                     </div>
                 </section>
-                <section class="recent-activity">
+                <section class="recent-activity border-bottom">
                     <h3>Recent Activity</h3>
                     <div class="member-container">
                         <img class="profile-image" src="images/member-1.jpg" alt="Victoria Chambers" />
@@ -232,7 +233,7 @@
                         <p>1 day ago</p>
                     </div>
                 </section>
-                <section class="message-user">
+                <section class="message-user border-bottom">
                     <h3>Message User</h3>
                     <form>
                         <input type="text" placeholder="Search for user" id="userField" />
@@ -242,6 +243,32 @@
                 </section>
                 <section id="settings" class="settings">
                     <h3>Settings</h3>
+                    <label class="switch-light switch-candy" onclick="">
+                        <input type="checkbox" />
+                        <strong>Send Email Notifications</strong>
+                        <span>
+                            <span>On</span>
+                            <span>Off</span>
+                            <a></a>
+                        </span>
+                    </label>
+                    <label class="switch-light switch-candy" onclick="">
+                        <input type="checkbox" />
+                        <strong>Set Profile to Public</strong>
+                        <span>
+                            <span>On</span>
+                            <span>Off</span>
+                            <a></a>
+                        </span>
+                    </label>
+                    <select id="timezone">
+                        <option disabled selected>Select a Timezone</option>
+                        <option>Eastern</option>
+                    </select>
+                    <div class="settings-buttons">
+                        <button id="save">Save</button>
+                        <button id="cancel">Cancel</button>
+                    </div>
                 </section>
             </main>
         </div>
