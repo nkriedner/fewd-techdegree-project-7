@@ -221,31 +221,50 @@ header h1 sup {
 }
 .daily-traffic {
     grid-area: daily-traffic;
-    height: 10rem;
+    min-height: 10rem;
 }
 .mobile-users {
     grid-area: mobile-users;
-    height: 10rem;
+    min-height: 10rem;
 }
 .social-stats {
     grid-area: social-stats;
-    height: 10rem;
+    min-height: 10rem;
+}
+.social-stats-container {
+    display: flex;
+    flex-direction: column;
+}
+.social-stats-content {
+    background-color: #fffafa;
+    display: flex;
+    border: 1px solid #aaa5a5;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 0.75rem 1.5rem;
+}
+.facebook-icon,
+.instagram-icon,
+.twitter-icon {
+    width: 3rem;
+    height: 3rem;
+    fill: blue;
 }
 .new-members {
     grid-area: new-members;
-    height: 10rem;
+    min-height: 10rem;
 }
 .recent-activity {
     grid-area: recent-activity;
-    height: 10rem;
+    min-height: 10rem;
 }
 .message-user {
     grid-area: message-user;
-    height: 10rem;
+    min-height: 10rem;
 }
 .settings {
     grid-area: settings;
-    height: 10rem;
+    min-height: 10rem;
 }
 
 /* KEYFRAMES */
@@ -300,6 +319,10 @@ header h1 sup {
     }
     .dashboard {
         width: 100%;
+    }
+    .social-stats-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
     }
 }
 @media screen and (min-width: 1024px) {
