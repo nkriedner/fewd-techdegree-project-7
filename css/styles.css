@@ -100,7 +100,14 @@ header h1 sup {
 }
 .notifications .note .close-x {
     margin-left: auto;
+    padding: 0.4rem 0.6rem;
+    transition: all 0.5s;
+}
+.notifications .note .close-x:hover {
     cursor: pointer;
+    background-color: #b42828;
+    color: white;
+    border-radius: 3px;
 }
 .profile-img {
     height: 5rem;

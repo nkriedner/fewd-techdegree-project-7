@@ -1,12 +1,12 @@
 // SELECT ELEMENTS
 const closeX = document.querySelectorAll(".close-x");
 const bellIcon = document.querySelector(".bell-icon svg");
-const notifictions = document.querySelector(".notifications");
+const notifications = document.querySelector(".notifications");
 const greenAlert = document.querySelector(".green-alert");
 
 // EVENT LISTENERS
 bellIcon.addEventListener("click", () => {
-    notifictions.style.display = "block";
+    notifications.style.display = "block";
     greenAlert.classList.remove("green-alert");
 });
 // Close-x button (deletes parent element on click)
