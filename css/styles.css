@@ -273,6 +273,15 @@ header h1 sup {
     grid-area: message-user;
     min-height: 10rem;
 }
+.message-user form {
+    display: flex;
+    flex-direction: column;
+}
+.message-user form * {
+    padding: 1rem;
+    margin: 0.5rem 1rem;
+    border-radius: 8px;
+}
 .settings {
     grid-area: settings;
     min-height: 10rem;
