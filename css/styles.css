@@ -220,24 +220,31 @@ header h1 sup {
 }
 .daily-traffic {
     grid-area: daily-traffic;
+    height: 10rem;
 }
 .mobile-users {
     grid-area: mobile-users;
+    height: 10rem;
 }
 .social-stats {
     grid-area: social-stats;
+    height: 10rem;
 }
 .new-members {
     grid-area: new-members;
+    height: 10rem;
 }
 .recent-activity {
     grid-area: recent-activity;
+    height: 10rem;
 }
 .message-user {
     grid-area: message-user;
+    height: 10rem;
 }
 .settings {
     grid-area: settings;
+    height: 10rem;
 }
 
 /* KEYFRAMES */
