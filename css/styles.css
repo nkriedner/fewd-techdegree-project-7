@@ -307,6 +307,7 @@ section nav {
     padding: 2rem 1rem;
     margin: 0 2rem;
     font-size: 1.3rem;
+    min-height: 95px;
 }
 .member-container:last-child {
     border-bottom: none;
@@ -334,9 +335,35 @@ section nav {
     flex-direction: column;
 }
 .message-user form * {
-    padding: 1rem;
+    padding: 1.5rem 1rem;
     margin: 0.5rem 1rem;
     border-radius: 8px;
+    margin-top: 1.5rem;
+}
+.message-user input,
+.message-user textarea {
+    background-color: #fffafa;
+    border-color: #c7bfbf;
+    outline: none;
+    border-width: 1px;
+}
+.message-user input::placeholder,
+.message-user textarea::placeholder {
+    color: #c7bfbf;
+}
+.message-user button {
+    background-color: #7979de;
+    letter-spacing: 0.45rem;
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    outline: none;
+    border: none;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+.message-user button:hover {
+    cursor: pointer;
 }
 .settings {
     grid-area: settings;
