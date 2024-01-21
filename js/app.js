@@ -16,7 +16,7 @@ for (let i = 0; i < closeX.length; i++) {
         closeX[i].parentNode.style.display = "none";
     });
 }
-// Traffic perios event handlers
+// Traffic periods event handlers
 trafficPeriods.addEventListener("click", (e) => {
     // Loop through li elements and remove all 'selected' class
     const trafficPeriodsList = document.querySelectorAll(".traffic li");
@@ -34,6 +34,28 @@ trafficPeriods.addEventListener("click", (e) => {
         updateChart(trafficChart, trafficHourly);
     } else if (e.target.innerText == "Monthly") {
         updateChart(trafficChart, trafficMonthly);
+    }
+});
+
+// CODE FOR MESSAGING SECTION
+const user = document.querySelector(".message-user input");
+const message = document.querySelector(".message-user textarea");
+const sendBtn = document.querySelector(".message-user button");
+
+sendBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    console.log("click");
+    console.log(user.value);
+    if (user.value === "" && message.value === "") {
+        alert("Please fill out user and message fields before sending!");
+    } else if (user.value === "") {
+        alert("Please fill out user field before sending!");
+    } else if (message.value === "") {
+        alert("Please fill out message field before sending!");
+    } else {
+        alert(`Message successfully sent to: ${user.value}`);
+        user.value = "";
+        message.value = "";
     }
 });
 
