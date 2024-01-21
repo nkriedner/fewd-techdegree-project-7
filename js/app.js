@@ -27,72 +27,83 @@ trafficPeriods.addEventListener("click", (e) => {
     e.target.className = "selected";
     // Update chart data
     if (e.target.innerText == "Daily") {
-        updateChart(myChart, dailyTraffic);
+        updateChart(trafficChart, trafficDaily);
     } else if (e.target.innerText == "Weekly") {
-        updateChart(myChart, weeklyTraffic);
+        updateChart(trafficChart, trafficWeekly);
     } else if (e.target.innerText == "Hourly") {
-        updateChart(myChart, hourlyTraffic);
+        updateChart(trafficChart, trafficHourly);
     } else if (e.target.innerText == "Monthly") {
-        updateChart(myChart, monthlyTraffic);
+        updateChart(trafficChart, trafficMonthly);
     }
 });
 
 // CODE FOR USING CHART.JS
-const ctx = document.getElementById("traffic-chart").getContext("2d");
+const trafficCtx = document.getElementById("traffic-chart").getContext("2d");
+const dailyTrafficCtx = document.getElementById("daily-traffic-chart").getContext("2d");
 
-const hourlyTraffic = {
+const trafficHourly = {
     labels: ["10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm", "8pm"],
     datasets: [
         {
             data: [25, 30, 15, 35, 20, 45, 20, 15, 35, 15, 20],
-            label: "Hourly Traffic",
+            label: "Traffic (Hourly)",
+            fill: true,
+            backgroundColor: "#c1c1db",
+        },
+    ],
+};
+const trafficDaily = {
+    labels: ["Wed", "Thu", "Fri", "Sat", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+    datasets: [
+        {
+            data: [225, 350, 300, 150, 250, 450, 300, 250, 400, 350, 200],
+            label: "Traffic (Daily)",
+            fill: true,
+            backgroundColor: "#c1c1db",
+        },
+    ],
+};
+const trafficWeekly = {
+    labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31"],
+    datasets: [
+        {
+            data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1750, 2250, 1500, 2500],
+            label: "Traffic (Weekly)",
+            fill: true,
+            backgroundColor: "#c1c1db",
+        },
+    ],
+};
+const trafficMonthly = {
+    labels: ["Jan", "Feb", "Mar", "Apr", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    datasets: [
+        {
+            data: [5000, 3250, 4500, 8800, 6500, 7150, 5300, 4550, 8050, 8700, 4200],
+            label: "Traffic (Monthly)",
             fill: true,
             backgroundColor: "#c1c1db",
         },
     ],
 };
 const dailyTraffic = {
-    labels: ["Wed", "Thu", "Fri", "Sat", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+    labels: ["S", "M", "T", "W", "T", "F", "S"],
     datasets: [
         {
-            data: [225, 350, 300, 150, 250, 450, 300, 250, 400, 350, 200],
+            data: [75, 115, 175, 125, 225, 200, 100],
             label: "Daily Traffic",
             fill: true,
             backgroundColor: "#c1c1db",
         },
     ],
 };
-const weeklyTraffic = {
-    labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31"],
-    datasets: [
-        {
-            data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1750, 2250, 1500, 2500],
-            label: "Weekly Traffic",
-            fill: true,
-            backgroundColor: "#c1c1db",
-        },
-    ],
-};
-const monthlyTraffic = {
-    labels: ["Jan", "Feb", "Mar", "Apr", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-    datasets: [
-        {
-            data: [5000, 3250, 4500, 8800, 6500, 7150, 5300, 4550, 8050, 8700, 4200],
-            label: "Monthly Traffic",
-            fill: true,
-            backgroundColor: "#c1c1db",
-        },
-    ],
-};
-const config = {
+const trafficConfig = {
     type: "line",
-    // data: weeklyTraffic,
     data: {
         labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31"],
         datasets: [
             {
                 data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1750, 2250, 1500, 2500],
-                label: "Weekly Traffic",
+                label: "Traffic (Weekly)",
                 fill: true,
                 backgroundColor: "#c1c1db",
             },
@@ -108,8 +119,32 @@ const config = {
         },
     },
 };
+const dailyTrafficConfig = {
+    type: "bar",
+    data: {
+        labels: ["S", "M", "T", "W", "T", "F", "S"],
+        datasets: [
+            {
+                data: [75, 115, 175, 125, 225, 200, 100],
+                label: "Daily Traffic",
+                fill: true,
+                backgroundColor: "#7979de",
+            },
+        ],
+    },
+    options: {
+        tension: 0.4, // creates curvy lines
+        responsive: true,
+        plugins: {
+            legend: {
+                display: false, // removes chart label
+            },
+        },
+    },
+};
 
-const myChart = new Chart(ctx, config);
+const trafficChart = new Chart(trafficCtx, trafficConfig);
+const dailyTrafficChart = new Chart(dailyTrafficCtx, dailyTrafficConfig);
 
 const updateChart = (chart, newData) => {
     chart.data.labels = newData.labels;
