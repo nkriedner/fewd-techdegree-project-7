@@ -227,16 +227,19 @@ section nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    grid-gap: 2.5rem;
+    /* grid-gap: 2.5rem; */
     padding: 0 1rem;
-    margin-right: 2rem;
+    /* margin-right: 2rem; */
 }
 .traffic ul li {
     font-size: 1.5rem;
+    padding: 1rem 2rem;
+}
+.traffic ul li:hover {
+    cursor: pointer;
 }
 .traffic ul li.selected {
     background-color: yellowgreen;
-    padding: 1rem 2rem;
     border-radius: 20px;
     color: white;
 }
