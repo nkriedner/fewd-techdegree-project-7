@@ -59,6 +59,7 @@ header {
     display: flex;
     align-items: center;
     background-color: #7979de;
+    /* background-color: #c1c1db; */
     color: white;
     padding: 3rem 1.5rem;
     grid-area: header;
@@ -197,6 +198,22 @@ header h1 sup {
     margin: 1.2rem;
     border-radius: 5px;
 }
+section h3 {
+    font-size: 1.6rem;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-left: 2rem;
+    margin-top: 2rem;
+}
+section nav {
+    margin-top: 0.5rem;
+}
+.chart-container {
+    margin: 2rem;
+}
+.chart-container canvas {
+    width: 100%;
+}
 .traffic {
     grid-area: traffic;
     /* margin-top: 1.2rem; */
@@ -217,7 +234,6 @@ header h1 sup {
 .traffic ul li {
     font-size: 1.5rem;
 }
-
 .traffic ul li.selected {
     background-color: yellowgreen;
     padding: 1rem 2rem;
@@ -378,6 +394,7 @@ header h1 sup {
     }
     .member-container {
         flex-direction: row;
+        text-align: left;
     }
 
     .member-container *:last-child {
@@ -394,5 +411,8 @@ header h1 sup {
             "social-stats social-stats"
             "new-members recent-activity"
             "message-user settings";
+    }
+    .recent-activity {
+        border-left: 3px solid green;
     }
 }
