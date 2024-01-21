@@ -40,6 +40,7 @@ trafficPeriods.addEventListener("click", (e) => {
 // CODE FOR USING CHART.JS
 const trafficCtx = document.getElementById("traffic-chart").getContext("2d");
 const dailyTrafficCtx = document.getElementById("daily-traffic-chart").getContext("2d");
+const mobileUsersCtx = document.getElementById("mobile-users-chart").getContext("2d");
 
 const trafficHourly = {
     labels: ["10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm", "8pm"],
@@ -142,9 +143,34 @@ const dailyTrafficConfig = {
         },
     },
 };
+const mobileUsersConfig = {
+    type: "doughnut",
+    data: {
+        labels: ["Desktop", "Tablet", "Phones"],
+        datasets: [
+            {
+                data: [60, 20, 20],
+                label: "Mobile Users",
+                fill: true,
+                backgroundColor: ["#7979de", "#71b971", "#00bcd4"],
+            },
+        ],
+    },
+    options: {
+        tension: 0.4, // creates curvy lines
+        responsive: true,
+        plugins: {
+            legend: {
+                display: true, // shows chart label
+                position: "right",
+            },
+        },
+    },
+};
 
 const trafficChart = new Chart(trafficCtx, trafficConfig);
 const dailyTrafficChart = new Chart(dailyTrafficCtx, dailyTrafficConfig);
+const mobileUsersChart = new Chart(mobileUsersCtx, mobileUsersConfig);
 
 const updateChart = (chart, newData) => {
     chart.data.labels = newData.labels;
