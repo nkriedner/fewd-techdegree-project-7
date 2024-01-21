@@ -150,7 +150,9 @@ const mobileUsersConfig = {
         datasets: [
             {
                 data: [60, 20, 20],
-                label: "Mobile Users",
+                label: "# of Users",
+                // label: "Mobile Users",
+                borderWidth: 0,
                 fill: true,
                 backgroundColor: ["#7979de", "#71b971", "#00bcd4"],
             },

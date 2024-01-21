@@ -207,6 +207,7 @@ section nav {
     margin-top: 0.5rem;
 }
 .chart-container {
+    padding: 0.1rem;
     margin: 2rem;
 }
 .chart-container canvas {
@@ -256,9 +257,8 @@ section nav {
     margin-bottom: 0;
 }
 #mobile-users-chart {
-    height: 25rem !important;
+    height: 20rem !important;
     margin: auto;
-    max-height: 100%;
 }
 .social-stats {
     grid-area: social-stats;
@@ -274,14 +274,21 @@ section nav {
     border: 1px solid #aaa5a5;
     padding: 1.5rem;
     border-radius: 8px;
+    font-size: 1.2rem;
+    color: #7979de;
     margin: 0.75rem 1.5rem;
+}
+.social-stats-number {
+    font-size: 2.5rem;
+    color: #888686;
 }
 .facebook-icon,
 .instagram-icon,
 .twitter-icon {
-    width: 3rem;
-    height: 3rem;
-    fill: blue;
+    width: 4.2rem;
+    height: 4.2rem;
+    fill: #7979de;
+    margin-right: 2rem;
 }
 .new-members {
     grid-area: new-members;
@@ -415,6 +422,9 @@ section nav {
     .social-stats-container {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
+    }
+    #mobile-users-chart {
+        /* height: 20rem !important; */
     }
     .member-container {
         flex-direction: row;
