@@ -250,6 +250,11 @@ section nav {
     min-height: 10rem;
     /* height: 5rem; */
 }
+.mobile-users .chart-container {
+    /* margin: 0; */
+    margin-top: 0;
+    margin-bottom: 0;
+}
 #mobile-users-chart {
     height: 25rem !important;
     margin: auto;
@@ -282,20 +287,32 @@ section nav {
     grid-area: new-members;
     min-height: 10rem;
 }
+.new-members .profile-image,
+.recent-activity .profile-image {
+    width: 22%;
+}
 .member-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     border-bottom: 1px solid #aaa5a5;
-    padding: 2rem 0;
-    margin: 2rem;
+    padding: 2rem 1rem;
+    margin: 0 2rem;
+    font-size: 1.3rem;
 }
 .member-container:last-child {
     border-bottom: none;
 }
 .member-container a {
-    color: blue;
+    color: #8888c4;
+    text-decoration: none;
+}
+.member-container a:hover {
+    text-decoration: underline;
+}
+.read-more-icon {
+    display: none;
 }
 .recent-activity {
     grid-area: recent-activity;
@@ -401,11 +418,19 @@ section nav {
     }
     .member-container {
         flex-direction: row;
+        font-size: 1.8rem;
         text-align: left;
     }
-
     .member-container *:last-child {
         margin-left: auto;
+    }
+    .member-container .profile-image {
+        width: 12%;
+        margin-right: 2rem;
+    }
+    .read-more-icon {
+        display: block;
+        font-size: 2.5rem;
     }
 }
 @media screen and (min-width: 1024px) {
@@ -419,7 +444,8 @@ section nav {
             "new-members recent-activity"
             "message-user settings";
     }
-    .recent-activity {
-        border-left: 3px solid green;
+    .recent-activity,
+    .settings {
+        border-left: 1px solid #aaa5a5;
     }
 }
