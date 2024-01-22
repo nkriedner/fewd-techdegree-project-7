@@ -101,6 +101,53 @@ user.addEventListener("keyup", (e) => {
     }
 });
 
+// CODE FOR SAVING SETTING IN LOCAL STORAGE
+const setEmailNotifications = document.querySelector("#email-notifications");
+const setProfileToPublic = document.querySelector("#set-profile-to-public");
+const setTimeZone = document.querySelector("#timezone");
+
+const saveBtn = document.querySelector("button#save");
+const cancelBtn = document.querySelector("button#cancel");
+
+// When page loads check for localstorage settings and adjust settings:
+if (localStorage.setEmailNotifications === "yes") {
+    setEmailNotifications.checked = true;
+}
+if (localStorage.setProfileToPublic === "yes") {
+    setProfileToPublic.checked = true;
+}
+if (
+    localStorage.setTimeZone === "Europe" ||
+    localStorage.setTimeZone === "Asia" ||
+    localStorage.setTimeZone === "USA"
+) {
+    setTimeZone.value = localStorage.setTimeZone;
+}
+
+saveBtn.addEventListener("click", () => {
+    // get the values for the settings:
+    if (setEmailNotifications.checked) {
+        localStorage.setEmailNotifications = "yes";
+    } else {
+        localStorage.setEmailNotifications = "no";
+    }
+    if (setProfileToPublic.checked) {
+        localStorage.setProfileToPublic = "yes";
+    } else {
+        localStorage.setProfileToPublic = "no";
+    }
+    if (setTimeZone.value === "Europe" || setTimeZone.value === "Asia" || setTimeZone.value === "USA") {
+        localStorage.setTimeZone = setTimeZone.value;
+    }
+});
+cancelBtn.addEventListener("click", () => {
+    setEmailNotifications.checked = false;
+    setProfileToPublic.checked = false;
+    localStorage.setEmailNotifications = "no";
+    localStorage.setProfileToPublic = "no";
+    localStorage.setTimeZone = "";
+});
+
 // CODE FOR USING CHART.JS
 const trafficCtx = document.getElementById("traffic-chart").getContext("2d");
 const dailyTrafficCtx = document.getElementById("daily-traffic-chart").getContext("2d");
