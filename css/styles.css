@@ -15,6 +15,22 @@ body {
 ul {
     list-style: none;
 }
+button {
+    letter-spacing: 0.45rem;
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    outline: none;
+    border: none;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+}
+button:hover,
+select:hover,
+.switch-light > span {
+    cursor: pointer;
+}
 
 /* GRID LAYOUT */
 .grid-wrapper {
@@ -275,19 +291,24 @@ section nav {
     padding: 1.5rem;
     border-radius: 8px;
     font-size: 1.2rem;
+    font-size: 1.5rem;
     color: #7979de;
     margin: 0.75rem 1.5rem;
 }
 .social-stats-number {
     font-size: 2.5rem;
+    font-size: 3.2rem;
     color: #888686;
 }
 .facebook-icon,
 .instagram-icon,
 .twitter-icon {
-    width: 4.2rem;
-    height: 4.2rem;
-    fill: #7979de;
+    width: 5.2rem;
+    height: 5.2rem;
+    fill: white;
+    background-color: #7979de;
+    padding: 1.5rem;
+    border-radius: 50%;
     margin-right: 2rem;
 }
 .new-members {
@@ -333,6 +354,7 @@ section nav {
 .message-user form {
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 .message-user form * {
     padding: 1.5rem 1rem;
@@ -351,23 +373,32 @@ section nav {
 .message-user textarea::placeholder {
     color: #c7bfbf;
 }
+.message-user .autocomplete-list {
+    position: absolute;
+    top: 4.7rem;
+    left: 0;
+    background: #a5a5ef;
+    width: 94%;
+    display: none;
+    padding: 0.5rem;
+}
+.message-user .autocomplete-list li {
+    background: #f1fed8;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    color: #7979de;
+}
+.message-user .autocomplete-list li:hover {
+    cursor: pointer;
+}
 .message-user button {
     background-color: #7979de;
-    letter-spacing: 0.45rem;
-    color: white;
-    text-transform: uppercase;
-    font-size: 1.8rem;
-    outline: none;
-    border: none;
-    padding: 2rem;
     margin-bottom: 2rem;
-}
-.message-user button:hover {
-    cursor: pointer;
 }
 .settings {
     grid-area: settings;
     min-height: 10rem;
+    font-size: 1.5rem;
 }
 .settings label {
     display: flex;
@@ -375,21 +406,44 @@ section nav {
     align-items: center;
     margin: 1rem;
 }
-.settings label span {
+.settings label,
+.settings select {
+    margin-left: 2rem;
+}
+.settings label > span {
     margin-left: auto;
+    width: 10rem;
+}
+/* #7979de */
+.switch-ios.switch-light input:checked ~ span {
+    border-color: #7979de;
+    /* border-color: green; */
+    box-shadow: inset 0 0 0 30px #7979de;
+}
+.switch-ios.switch-light > span {
+    width: 30%;
 }
 #timezone {
     padding: 1rem;
-    width: 100%;
+    width: 91%;
+    outline: none;
+    border-radius: 5px;
+    margin: 2rem 1.5rem;
+    background-color: #fffafa;
 }
 .settings-buttons {
     padding: 1rem;
     display: flex;
     grid-gap: 1rem;
 }
-
 .settings-buttons button {
     flex: 1;
+}
+button#save {
+    background-color: #7979de;
+}
+button#cancel {
+    background-color: #b29393;
 }
 
 /* KEYFRAMES */
@@ -450,6 +504,9 @@ section nav {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
     }
+    .switch-ios.switch-light > span {
+        width: 15%;
+    }
     #mobile-users-chart {
         /* height: 20rem !important; */
     }
@@ -469,6 +526,23 @@ section nav {
         display: block;
         font-size: 2.5rem;
     }
+    .settings label,
+    .settings select#timezone {
+        margin-top: 4rem;
+    }
+    .settings select#timezone {
+        width: 96%;
+    }
+    .settings label {
+        justify-content: flex-start;
+    }
+    .settings label strong {
+        width: 20rem;
+    }
+    .settings label > span {
+        margin-left: 0;
+        width: 10rem;
+    }
 }
 @media screen and (min-width: 1024px) {
     main {
@@ -484,5 +558,10 @@ section nav {
     .recent-activity,
     .settings {
         border-left: 1px solid #aaa5a5;
+    }
+    .settings-buttons button {
+        margin-top: 3.9rem;
+        margin-bottom: 0;
+        padding: 1.7rem;
     }
 }

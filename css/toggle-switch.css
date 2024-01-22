@@ -354,6 +354,7 @@
     .switch-ios.switch-light input:checked ~ span a {
         left: 100%;
         border-color: #4bd865;
+        border-color: blue; /* my style */
         margin-left: -2em;
     }
     .switch-ios.switch-light input:checked ~ span {

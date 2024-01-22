@@ -239,33 +239,37 @@
                     <h3>Message User</h3>
                     <form>
                         <input type="text" placeholder="Search for user" id="userField" />
+                        <ul class="autocomplete-list"></ul>
                         <textarea placeholder="Message for User" id="messageField" cols="30" rows="10"></textarea>
                         <button>Send</button>
                     </form>
                 </section>
                 <section id="settings" class="settings">
                     <h3>Settings</h3>
-                    <label class="switch-light switch-candy" onclick="">
+                    <label class="switch-light switch-ios" onclick="">
                         <input type="checkbox" />
                         <strong>Send Email Notifications</strong>
                         <span>
-                            <span>On</span>
                             <span>Off</span>
+                            <span>On</span>
                             <a></a>
                         </span>
                     </label>
-                    <label class="switch-light switch-candy" onclick="">
+                    <label class="switch-light switch-ios" onclick="">
                         <input type="checkbox" />
                         <strong>Set Profile to Public</strong>
                         <span>
-                            <span>On</span>
                             <span>Off</span>
+                            <span>On</span>
                             <a></a>
                         </span>
                     </label>
                     <select id="timezone">
                         <option disabled selected>Select a Timezone</option>
-                        <option>Eastern</option>
+                        <option>Europe</option>
+                        <option>Asia</option>
+                        <option>USA</option>
+                        <option>Australia</option>
                     </select>
                     <div class="settings-buttons">
                         <button id="save">Save</button>

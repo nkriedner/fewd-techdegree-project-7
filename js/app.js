@@ -59,6 +59,48 @@ sendBtn.addEventListener("click", (e) => {
     }
 });
 
+// CODE FOR AUTOCOMPLETE FEATURE IN USER INPUT
+const autocompleteList = document.querySelector(".autocomplete-list");
+// Data:
+const userNames = ["Victoria Chambers", "Dale Byrd", "Dawn Wood", "Dan Oliver"];
+// Event Listener for search input:
+user.addEventListener("keyup", (e) => {
+    // Capture user input value (in lowercase)
+    let userSearchInput = e.target.value.toLowerCase();
+
+    if (userSearchInput.length < 1) {
+        autocompleteList.style.display = "none";
+    } else {
+        // Create autocomplete list
+        const autocompleteMatches = [];
+
+        // console.log(userSearchInput);
+        userNames.forEach((userName) => {
+            if (userName.toLowerCase().includes(userSearchInput)) {
+                autocompleteMatches.push(userName);
+                autocompleteList.style.display = "block";
+            }
+        });
+        console.log(autocompleteMatches);
+        // Attach autocomplete list under search input
+        // 1. Empty list
+        autocompleteList.innerHTML = "";
+        // Create list elements for each name
+        autocompleteMatches.forEach((match) => {
+            const li = document.createElement("li");
+            li.textContent = match;
+            autocompleteList.appendChild(li);
+        });
+        // Add event listener to each list item (so they can be chosen)
+        document.querySelectorAll(".autocomplete-list li").forEach((listItem) => {
+            listItem.addEventListener("click", () => {
+                user.value = listItem.textContent;
+                autocompleteList.style.display = "none";
+            });
+        });
+    }
+});
+
 // CODE FOR USING CHART.JS
 const trafficCtx = document.getElementById("traffic-chart").getContext("2d");
 const dailyTrafficCtx = document.getElementById("daily-traffic-chart").getContext("2d");
